@@ -76,6 +76,7 @@ const StudentManagement = () => {
       
      let res= await axios.delete(`${URL}/api/students/${s._id}`)
      console.log(res.data);
+
         
       
     } catch (error) {
@@ -91,6 +92,14 @@ const StudentManagement = () => {
         try {
           let res= await axios.delete(`${URL}/api/students/${id}`)
               console.log(res.data);
+              setFormValues({
+                class:'',
+                name:'',
+                gender:'',
+                dob:'',
+                contactDetails:'',
+                feesPaid:'',
+              });
             console.log(id);
         } catch (error) {
           console.log(error);
@@ -101,6 +110,7 @@ const StudentManagement = () => {
 
   return (
     <div className="container mx-auto px-4">
+      {!students && <>Loading....</>}
       <h1 className="text-2xl font-bold mb-4">Student Management</h1>
       <div>  We Have Available Classes:
         {Classes.map(e=>{

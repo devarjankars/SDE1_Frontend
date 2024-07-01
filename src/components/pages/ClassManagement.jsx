@@ -74,8 +74,13 @@ const HandleEidt= async(e)=>{
       studentLimit:e.studentLimit,
     })
     const res = axios.delete(`${URL}/api/classes/${e._id}`);
-    console.log(res.data);
-
+   
+    setForm({
+      name:e.className,
+      year:e.year,
+      teacherId:'',
+      studentLimit:e.studentLimit,
+    })
     
   } catch (error) {
     alert(error.message)
