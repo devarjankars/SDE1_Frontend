@@ -5,6 +5,7 @@ import { Bar } from 'react-chartjs-2';
 import { URL } from '../../url'; 
 
 const ClassAnalytics = () => {
+
   const { id } = useParams();
   const [classData, setClassData] = useState(null);
 
@@ -17,7 +18,7 @@ const ClassAnalytics = () => {
     fetchData();
   }, [id]);
 
-  if (!classData) return <div>Loading...</div>;
+  if (!classData) return <div>No Student found for this Class</div>;
 
   const maleCount = classData.maleStudents
   const femaleCount = classData.femaleStudents
